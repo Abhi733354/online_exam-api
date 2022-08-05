@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const usersRoute = require('./routes/users');
 // require("dotenv").config({ path: ".env" });
 
 
@@ -16,6 +17,8 @@ app.get('/', (req, res) => {
 
     }
 })
+
+app.use('/users', usersRoute);
 
 // app.listen(process.env.APP_PORT);
 app.listen(4000);
